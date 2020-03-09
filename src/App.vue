@@ -1,6 +1,10 @@
 <template>
   <div id="app">
-    <component v-bind:is="currentSection" v-on:proceed="onProceed" />
+    <component
+      v-bind:is="currentSection"
+      v-on:proceed="onProceed"
+      v-bind:customData="customData"
+    />
   </div>
 </template>
 
@@ -20,6 +24,7 @@ import Section4PASPF from "./components/Section4PASPF.vue";
 import Section4Formative from "./components/Section4Formative.vue";
 import Section4Discussion from "./components/Section4Discussion.vue";
 import SectionFinalAssessment from "./components/SectionFinalAssessment.vue";
+import io from "socket.io-client";
 
 export default {
   name: "App",
@@ -42,6 +47,7 @@ export default {
   },
   data: function() {
     return {
+      socket: io("localhost:3001"),
       currentSection: "Section1Spectrum",
       sections: [
         "Section1Spectrum",
@@ -59,7 +65,8 @@ export default {
         "Section4Formative",
         "Section4Discussion",
         "SectionFinalAssessment"
-      ]
+      ],
+      customData: null
     };
   },
   methods: {
@@ -70,6 +77,11 @@ export default {
         this.currentSection = this.sections[(index + 1) % count];
       }
     }
+  },
+  mounted() {
+    this.socket.on("USER_PAIR", data => {
+      this.customData = data;
+    });
   }
 };
 </script>
