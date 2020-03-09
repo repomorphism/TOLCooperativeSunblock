@@ -105,5 +105,8 @@ function removeCuteName(thisUser) {
   delete nameAssignment[thisUser];
 }
 
-// Known bug: race condition
-// when refreshing it's possible to get paired to the one just closed
+// Known bug: race condition?
+// When refreshing it's possible to get paired to the one just closed.
+// Workaround: Just refresh some more.
+// Also note that if there are two pairs at the same time,
+// 4 names are not necessarily all unique.
