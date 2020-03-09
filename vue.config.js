@@ -1,6 +1,6 @@
 module.exports = {
   //   devServer: {
-  //     proxy: "http://localhost:3001/"
-  //   }
+  //     proxy: "https://mighty-dawn-11508.herokuapp.com:3000/"
+  //   },
   publicPath: "./"
 };
