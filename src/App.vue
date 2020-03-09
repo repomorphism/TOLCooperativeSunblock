@@ -48,7 +48,7 @@ export default {
   data: function() {
     return {
       // socket: io("localhost:3000"),
-      socket: io("https://mighty-dawn-11508.herokuapp.com"),
+      socket: io("wss://mighty-dawn-11508.herokuapp.com"),
       currentSection: "Section1Spectrum",
       sections: [
         "Section1Spectrum",
