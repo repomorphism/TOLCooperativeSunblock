@@ -1,10 +1,6 @@
 <template>
   <div id="app">
-    <component
-      v-bind:is="currentSection"
-      v-on:proceed="onProceed"
-      v-bind:customData="customData"
-    />
+    <component v-bind:is="currentSection" v-on:proceed="onProceed" v-bind:customData="customData" />
   </div>
 </template>
 
@@ -47,8 +43,8 @@ export default {
   },
   data: function() {
     return {
-      // socket: io("localhost:3000"),
-      socket: io("wss://mighty-dawn-11508.herokuapp.com"),
+      socket: io("localhost:3000"),
+      // socket: io("wss://mighty-dawn-11508.herokuapp.com"),
       currentSection: "Section1Spectrum",
       sections: [
         "Section1Spectrum",

@@ -4,16 +4,9 @@ const app = express();
 app.use(cors());
 
 const PORT = process.env.PORT || 3000;
-
-// const server = app.listen(PORT, function() {
-//   console.log("server is running on port ", PORT);
-// });
-
-const INDEX = "/index.html";
-
-const server = express()
-  .use((req, res) => res.sendFile(INDEX, { root: __dirname }))
-  .listen(PORT, () => console.log(`Listening on ${PORT}`));
+const server = app.listen(PORT, function() {
+  console.log("server is running on port ", PORT);
+});
 
 const io = require("socket.io")(server);
 
@@ -120,3 +113,7 @@ function removeCuteName(thisUser) {
 // Workaround: Just refresh some more.
 // Also note that if there are two pairs at the same time,
 // 4 names are not necessarily all unique.
+
+app.get("/url", (req, res, next) => {
+  res.json(["Tony", "Lisa", "Michael", "Ginger", "Food"]);
+});
