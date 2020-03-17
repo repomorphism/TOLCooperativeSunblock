@@ -1,67 +1,77 @@
 <template>
   <div id="app">
-    <component v-bind:is="currentSection" v-on:proceed="onProceed" v-bind:customData="customData" />
+    <component
+      v-bind:is="currentSection"
+      v-on:proceed="onProceed"
+      v-bind:customData="customData"
+    />
   </div>
 </template>
 
 <script>
+import Section1Context from "./components/Section1Context.vue";
+import Section1Video from "./components/Section1Video.vue";
 import Section1Welcome from "./components/Section1Welcome.vue";
-import Section1Spectrum from "./components/Section1Spectrum.vue";
-import Section2Instruction from "./components/Section2Instruction.vue";
-import Section2UVAB from "./components/Section2UVAB.vue";
-import Section2Formative from "./components/Section2Formative.vue";
-import Section2Discussion from "./components/Section2Discussion.vue";
-import Section3Instruction from "./components/Section3Instruction.vue";
-import Section3Chemicals from "./components/Section3Chemicals.vue";
-import Section3Formative from "./components/Section3Formative.vue";
-import Section3Discussion from "./components/Section3Discussion.vue";
-import Section4Instruction from "./components/Section4Instruction.vue";
-import Section4PASPF from "./components/Section4PASPF.vue";
-import Section4Formative from "./components/Section4Formative.vue";
-import Section4Discussion from "./components/Section4Discussion.vue";
-import SectionFinalAssessment from "./components/SectionFinalAssessment.vue";
+// import Section1Spectrum from "./components/Section1Spectrum.vue";
+// import Section2Instruction from "./components/Section2Instruction.vue";
+// import Section2UVAB from "./components/Section2UVAB.vue";
+// import Section2Formative from "./components/Section2Formative.vue";
+// import Section2Discussion from "./components/Section2Discussion.vue";
+// import Section3Instruction from "./components/Section3Instruction.vue";
+// import Section3Chemicals from "./components/Section3Chemicals.vue";
+// import Section3Formative from "./components/Section3Formative.vue";
+// import Section3Discussion from "./components/Section3Discussion.vue";
+// import Section4Instruction from "./components/Section4Instruction.vue";
+// import Section4PASPF from "./components/Section4PASPF.vue";
+// import Section4Formative from "./components/Section4Formative.vue";
+// import Section4Discussion from "./components/Section4Discussion.vue";
+// import SectionFinalAssessment from "./components/SectionFinalAssessment.vue";
 import io from "socket.io-client";
 
 export default {
   name: "App",
   components: {
-    Section1Spectrum,
-    Section1Welcome,
-    Section2Instruction,
-    Section2UVAB,
-    Section2Formative,
-    Section2Discussion,
-    Section3Instruction,
-    Section3Chemicals,
-    Section3Formative,
-    Section3Discussion,
-    Section4Instruction,
-    Section4PASPF,
-    Section4Formative,
-    Section4Discussion,
-    SectionFinalAssessment
+    Section1Context,
+    Section1Video,
+    Section1Welcome
+    // Section1Spectrum,
+    // Section2Instruction,
+    // Section2UVAB,
+    // Section2Formative,
+    // Section2Discussion,
+    // Section3Instruction,
+    // Section3Chemicals,
+    // Section3Formative,
+    // Section3Discussion,
+    // Section4Instruction,
+    // Section4PASPF,
+    // Section4Formative,
+    // Section4Discussion,
+    // SectionFinalAssessment
   },
   data: function() {
     return {
       socket: io("localhost:3000"),
       // socket: io("wss://mighty-dawn-11508.herokuapp.com"),
-      currentSection: "Section1Spectrum",
+      currentSection: "Section1Context",
       sections: [
-        "Section1Spectrum",
-        "Section1Welcome",
-        "Section2Instruction",
-        "Section2UVAB",
-        "Section2Formative",
-        "Section2Discussion",
-        "Section3Instruction",
-        "Section3Chemicals",
-        "Section3Formative",
-        "Section3Discussion",
-        "Section4Instruction",
-        "Section4PASPF",
-        "Section4Formative",
-        "Section4Discussion",
-        "SectionFinalAssessment"
+        "Section1Context",
+        "Section1Video",
+        "Section1Welcome"
+        // "Section1Spectrum",
+        // "Section2Instruction",
+        // "Section2UVAB",
+        // "Section2Formative",
+        // "Section2Discussion",
+        // "Section3Instruction",
+        // "Section3Chemicals",
+        // "Section3Formative",
+        // "Section3Discussion",
+        // "Section4Instruction",
+        // "Section4PASPF",
+        // "Section4Formative",
+        // "Section4Discussion",
+        // "SectionFinalAssessment"
       ],
       customData: null
     };
@@ -77,7 +87,13 @@ export default {
   },
   mounted() {
     this.socket.on("USER_PAIR", data => {
+      // Fields: me, partner
       this.customData = data;
+      // Add field: assignment
+      if (data.me && data.partner) {
+        this.customData.assignment = data.me > data.partner ? "A" : "B";
+      }
+      console.log(this.customData);
     });
   }
 };

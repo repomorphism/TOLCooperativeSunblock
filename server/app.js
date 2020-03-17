@@ -41,16 +41,16 @@ io.on("connection", function(socket) {
   const thisUserName = assignCuteName(thisUser);
   const otherUserName = nameAssignment[otherUser];
 
-  console.log("Connected", thisUserName, firstUser, pairedUsers);
+  // console.log("Connected", thisUserName, firstUser, pairedUsers);
 
   // Notify user pairing
-  console.log("emit to", thisUserName);
+  // console.log("emit to", thisUserName);
   io.to(thisUser).emit("USER_PAIR", {
     me: thisUserName,
     partner: otherUserName
   });
   if (otherUser) {
-    console.log("emit to other user", otherUser);
+    // console.log("emit to other user", otherUser);
     io.to(otherUser).emit("USER_PAIR", {
       me: otherUserName,
       partner: thisUserName
@@ -62,7 +62,7 @@ io.on("connection", function(socket) {
     removeCuteName(pairedUsers[thisUser]);
     removeUserPairs(thisUser);
 
-    console.log("Disconnected", thisUserName, firstUser, pairedUsers);
+    // console.log("Disconnected", thisUserName, firstUser, pairedUsers);
   });
 });
 
