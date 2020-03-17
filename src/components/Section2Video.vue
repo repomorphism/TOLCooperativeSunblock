@@ -1,9 +1,9 @@
 <template>
-  <section id="section1video">
+  <section id="section2video">
     <iframe
       width="720"
       height="405"
-      src="https://www.youtube.com/embed/iokXPuCA2c0"
+      v-bind:src="videoUrl"
       frameborder="0"
       allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
       allowfullscreen
@@ -14,7 +14,17 @@
 
 <script>
 export default {
-  name: "Section1Video"
+  name: "Section2Video",
+  props: ["customData"],
+  computed: {
+    videoUrl: function() {
+      if (this.customData.assignment == "A") {
+        return "https://www.youtube.com/embed/J4b7MgMvsnU";
+      } else {
+        return "https://www.youtube.com/embed/DHN_JxiXx0Q";
+      }
+    }
+  }
 };
 </script>
 

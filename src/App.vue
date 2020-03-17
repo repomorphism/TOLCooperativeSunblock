@@ -12,6 +12,8 @@
 import Section1Context from "./components/Section1Context.vue";
 import Section1Video from "./components/Section1Video.vue";
 import Section1Welcome from "./components/Section1Welcome.vue";
+import Section2Cover from "./components/Section2Cover.vue";
+import Section2Video from "./components/Section2Video.vue";
 // import Section1Spectrum from "./components/Section1Spectrum.vue";
 // import Section2Instruction from "./components/Section2Instruction.vue";
 // import Section2UVAB from "./components/Section2UVAB.vue";
@@ -33,7 +35,9 @@ export default {
   components: {
     Section1Context,
     Section1Video,
-    Section1Welcome
+    Section1Welcome,
+    Section2Cover,
+    Section2Video
     // Section1Spectrum,
     // Section2Instruction,
     // Section2UVAB,
@@ -57,7 +61,9 @@ export default {
       sections: [
         "Section1Context",
         "Section1Video",
-        "Section1Welcome"
+        "Section1Welcome",
+        "Section2Cover",
+        "Section2Video"
         // "Section1Spectrum",
         // "Section2Instruction",
         // "Section2UVAB",
@@ -107,5 +113,12 @@ export default {
   text-align: center;
   /* color: #2c3e50; */
   margin-top: 60px;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 </style>

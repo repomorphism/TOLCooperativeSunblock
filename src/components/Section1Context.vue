@@ -1,5 +1,5 @@
 <template>
-  <div id="section1context">
+  <section id="section1context">
     <h1>Before eveything begins, let’s learn some contexts about sunblocks.</h1>
     <NamesDisplay v-if="customData" v-bind:names="customData" />
     <button
@@ -11,7 +11,7 @@
     <p v-else>
       (If you're testing, you can use two browser windows)
     </p>
-  </div>
+  </section>
 </template>
 
 <script>

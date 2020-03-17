@@ -1,5 +1,5 @@
 <template>
-  <div id="section1welcome">
+  <section id="section1welcome">
     <h1>Welcome to the JigSaw activity!</h1>
     <p>
       In this video, you will watch three clips different from your partner.
@@ -9,7 +9,7 @@
       / her in a clear and correct way.
     </p>
     <button v-on:click="$emit('proceed')">Let's start</button>
-  </div>
+  </section>
 </template>
 
 <script>
