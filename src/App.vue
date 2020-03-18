@@ -1,6 +1,10 @@
 <template>
   <div id="app">
-    <component v-bind:is="currentSection" v-on:proceed="onProceed" v-bind:customData="customData" />
+    <component
+      v-bind:is="currentSection"
+      v-on:proceed="onProceed"
+      v-bind:customData="customData"
+    />
   </div>
 </template>
 
