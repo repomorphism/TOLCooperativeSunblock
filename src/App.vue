@@ -14,6 +14,11 @@ import Section2Q1 from "./components/Section2Q1.vue";
 import Section2Q2 from "./components/Section2Q2.vue";
 import Section2Prepare from "./components/Section2Prepare.vue";
 import Section2Discussion from "./components/Section2Discussion.vue";
+import Section3Cover from "./components/Section3Cover.vue";
+import Section3Video from "./components/Section3Video.vue";
+import Section3Q1 from "./components/Section3Q1.vue";
+import Section3Q2 from "./components/Section3Q2.vue";
+import Section3Q3 from "./components/Section3Q3.vue";
 // import Section1Spectrum from "./components/Section1Spectrum.vue";
 // import Section2Instruction from "./components/Section2Instruction.vue";
 // import Section2UVAB from "./components/Section2UVAB.vue";
@@ -40,7 +45,12 @@ export default {
     Section2Q1,
     Section2Q2,
     Section2Prepare,
-    Section2Discussion
+    Section2Discussion,
+    Section3Cover,
+    Section3Video,
+    Section3Q1,
+    Section3Q2,
+    Section3Q3
     // Section1Spectrum,
     // Section2Instruction,
     // Section2UVAB,
@@ -59,7 +69,7 @@ export default {
     return {
       socket: io("localhost:3000"),
       // socket: io("wss://mighty-dawn-11508.herokuapp.com"),
-      currentSection: "Section2Q1",
+      currentSection: "Section3Cover",
       sections: [
         "Section1Context",
         "Section1Video",
@@ -69,7 +79,12 @@ export default {
         "Section2Q1",
         "Section2Q2",
         "Section2Prepare",
-        "Section2Discussion"
+        "Section2Discussion",
+        "Section3Cover",
+        "Section3Video",
+        "Section3Q1",
+        "Section3Q2",
+        "Section3Q3"
         // "Section1Spectrum",
         // "Section2Instruction",
         // "Section2UVAB",
