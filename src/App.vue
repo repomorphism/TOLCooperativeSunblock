@@ -25,8 +25,8 @@ import Section4Cover from "./components/Section4Cover.vue";
 import Section4Video from "./components/Section4Video.vue";
 import Section4Q1 from "./components/Section4Q1.vue";
 import Section4Q2 from "./components/Section4Q2.vue";
-// import Section4Q3 from "./components/Section4Q3.vue";
-// import Section4Prepare from "./components/Section4Prepare.vue";
+import Section4Q3 from "./components/Section4Q3.vue";
+import Section4Prepare from "./components/Section4Prepare.vue";
 // import Section4Discussion from "./components/Section4Discussion.vue";
 
 // import Section1Spectrum from "./components/Section1Spectrum.vue";
@@ -64,9 +64,9 @@ export default {
     Section4Cover,
     Section4Video,
     Section4Q1,
-    Section4Q2
-    // Section4Q3,
-    // Section4Prepare,
+    Section4Q2,
+    Section4Q3,
+    Section4Prepare
     // Section4Discussion
 
     // Section1Spectrum,
@@ -106,9 +106,9 @@ export default {
         "Section4Cover",
         "Section4Video",
         "Section4Q1",
-        "Section4Q2"
-        // "Section4Q3",
-        // "Section4Prepare",
+        "Section4Q2",
+        "Section4Q3",
+        "Section4Prepare"
         // "Section4Discussion"
 
         // "Section1Spectrum",
