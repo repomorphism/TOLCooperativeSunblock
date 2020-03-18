@@ -1,6 +1,6 @@
 <template>
   <div id="sectionfinalassessment">
-    <p>Section Final Assessment</p>
+    <h1>Final Assessment</h1>
   </div>
 </template>
 

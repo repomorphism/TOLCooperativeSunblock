@@ -1,7 +1,7 @@
 <template>
   <div id="section4discussion">
-    <p>Section 4 Discussion</p>
-    <button v-on:click="$emit('proceed')">Proceed</button>
+    <h1>Free discussion</h1>
+    <button v-on:click="$emit('proceed')">Finish</button>
   </div>
 </template>
 

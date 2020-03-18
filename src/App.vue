@@ -27,19 +27,8 @@ import Section4Q1 from "./components/Section4Q1.vue";
 import Section4Q2 from "./components/Section4Q2.vue";
 import Section4Q3 from "./components/Section4Q3.vue";
 import Section4Prepare from "./components/Section4Prepare.vue";
-// import Section4Discussion from "./components/Section4Discussion.vue";
-
-// import Section1Spectrum from "./components/Section1Spectrum.vue";
-// import Section2Instruction from "./components/Section2Instruction.vue";
-// import Section2UVAB from "./components/Section2UVAB.vue";
-// import Section2Formative from "./components/Section2Formative.vue";
-// import Section3Instruction from "./components/Section3Instruction.vue";
-// import Section3Chemicals from "./components/Section3Chemicals.vue";
-// import Section3Formative from "./components/Section3Formative.vue";
-// import Section4Instruction from "./components/Section4Instruction.vue";
-// import Section4PASPF from "./components/Section4PASPF.vue";
-// import Section4Formative from "./components/Section4Formative.vue";
-// import SectionFinalAssessment from "./components/SectionFinalAssessment.vue";
+import Section4Discussion from "./components/Section4Discussion.vue";
+import SectionFinalAssessment from "./components/SectionFinalAssessment.vue";
 import io from "socket.io-client";
 
 export default {
@@ -66,26 +55,15 @@ export default {
     Section4Q1,
     Section4Q2,
     Section4Q3,
-    Section4Prepare
-    // Section4Discussion
-
-    // Section1Spectrum,
-    // Section2Instruction,
-    // Section2UVAB,
-    // Section2Formative,
-    // Section3Instruction,
-    // Section3Chemicals,
-    // Section3Formative,
-    // Section4Instruction,
-    // Section4PASPF,
-    // Section4Formative,
-    // SectionFinalAssessment
+    Section4Prepare,
+    Section4Discussion,
+    SectionFinalAssessment
   },
   data: function() {
     return {
       socket: io("localhost:3000"),
       // socket: io("wss://mighty-dawn-11508.herokuapp.com"),
-      currentSection: "Section4Cover",
+      currentSection: "Section1Context",
       sections: [
         "Section1Context",
         "Section1Video",
@@ -108,20 +86,9 @@ export default {
         "Section4Q1",
         "Section4Q2",
         "Section4Q3",
-        "Section4Prepare"
-        // "Section4Discussion"
-
-        // "Section1Spectrum",
-        // "Section2Instruction",
-        // "Section2UVAB",
-        // "Section2Formative",
-        // "Section3Instruction",
-        // "Section3Chemicals",
-        // "Section3Formative",
-        // "Section4Instruction",
-        // "Section4PASPF",
-        // "Section4Formative",
-        // "SectionFinalAssessment"
+        "Section4Prepare",
+        "Section4Discussion",
+        "SectionFinalAssessment"
       ],
       customData: null
     };
