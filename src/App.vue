@@ -1,10 +1,6 @@
 <template>
   <div id="app">
-    <component
-      v-bind:is="currentSection"
-      v-on:proceed="onProceed"
-      v-bind:customData="customData"
-    />
+    <component v-bind:is="currentSection" v-on:proceed="onProceed" v-bind:customData="customData" />
   </div>
 </template>
 
@@ -14,11 +10,14 @@ import Section1Video from "./components/Section1Video.vue";
 import Section1Welcome from "./components/Section1Welcome.vue";
 import Section2Cover from "./components/Section2Cover.vue";
 import Section2Video from "./components/Section2Video.vue";
+import Section2Q1 from "./components/Section2Q1.vue";
+import Section2Q2 from "./components/Section2Q2.vue";
+import Section2Prepare from "./components/Section2Prepare.vue";
+import Section2Discussion from "./components/Section2Discussion.vue";
 // import Section1Spectrum from "./components/Section1Spectrum.vue";
 // import Section2Instruction from "./components/Section2Instruction.vue";
 // import Section2UVAB from "./components/Section2UVAB.vue";
 // import Section2Formative from "./components/Section2Formative.vue";
-// import Section2Discussion from "./components/Section2Discussion.vue";
 // import Section3Instruction from "./components/Section3Instruction.vue";
 // import Section3Chemicals from "./components/Section3Chemicals.vue";
 // import Section3Formative from "./components/Section3Formative.vue";
@@ -37,12 +36,15 @@ export default {
     Section1Video,
     Section1Welcome,
     Section2Cover,
-    Section2Video
+    Section2Video,
+    Section2Q1,
+    Section2Q2,
+    Section2Prepare,
+    Section2Discussion
     // Section1Spectrum,
     // Section2Instruction,
     // Section2UVAB,
     // Section2Formative,
-    // Section2Discussion,
     // Section3Instruction,
     // Section3Chemicals,
     // Section3Formative,
@@ -57,18 +59,21 @@ export default {
     return {
       socket: io("localhost:3000"),
       // socket: io("wss://mighty-dawn-11508.herokuapp.com"),
-      currentSection: "Section1Context",
+      currentSection: "Section2Q1",
       sections: [
         "Section1Context",
         "Section1Video",
         "Section1Welcome",
         "Section2Cover",
-        "Section2Video"
+        "Section2Video",
+        "Section2Q1",
+        "Section2Q2",
+        "Section2Prepare",
+        "Section2Discussion"
         // "Section1Spectrum",
         // "Section2Instruction",
         // "Section2UVAB",
         // "Section2Formative",
-        // "Section2Discussion",
         // "Section3Instruction",
         // "Section3Chemicals",
         // "Section3Formative",
@@ -99,7 +104,6 @@ export default {
       if (data.me && data.partner) {
         this.customData.assignment = data.me > data.partner ? "A" : "B";
       }
-      console.log(this.customData);
     });
   }
 };
