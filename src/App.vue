@@ -19,6 +19,16 @@ import Section3Video from "./components/Section3Video.vue";
 import Section3Q1 from "./components/Section3Q1.vue";
 import Section3Q2 from "./components/Section3Q2.vue";
 import Section3Q3 from "./components/Section3Q3.vue";
+import Section3Prepare from "./components/Section3Prepare.vue";
+import Section3Discussion from "./components/Section3Discussion.vue";
+import Section4Cover from "./components/Section4Cover.vue";
+import Section4Video from "./components/Section4Video.vue";
+// import Section4Q1 from "./components/Section4Q1.vue";
+// import Section4Q2 from "./components/Section4Q2.vue";
+// import Section4Q3 from "./components/Section4Q3.vue";
+// import Section4Prepare from "./components/Section4Prepare.vue";
+// import Section4Discussion from "./components/Section4Discussion.vue";
+
 // import Section1Spectrum from "./components/Section1Spectrum.vue";
 // import Section2Instruction from "./components/Section2Instruction.vue";
 // import Section2UVAB from "./components/Section2UVAB.vue";
@@ -26,11 +36,9 @@ import Section3Q3 from "./components/Section3Q3.vue";
 // import Section3Instruction from "./components/Section3Instruction.vue";
 // import Section3Chemicals from "./components/Section3Chemicals.vue";
 // import Section3Formative from "./components/Section3Formative.vue";
-// import Section3Discussion from "./components/Section3Discussion.vue";
 // import Section4Instruction from "./components/Section4Instruction.vue";
 // import Section4PASPF from "./components/Section4PASPF.vue";
 // import Section4Formative from "./components/Section4Formative.vue";
-// import Section4Discussion from "./components/Section4Discussion.vue";
 // import SectionFinalAssessment from "./components/SectionFinalAssessment.vue";
 import io from "socket.io-client";
 
@@ -50,7 +58,17 @@ export default {
     Section3Video,
     Section3Q1,
     Section3Q2,
-    Section3Q3
+    Section3Q3,
+    Section3Prepare,
+    Section3Discussion,
+    Section4Cover,
+    Section4Video
+    // Section4Q1,
+    // Section4Q2,
+    // Section4Q3,
+    // Section4Prepare,
+    // Section4Discussion
+
     // Section1Spectrum,
     // Section2Instruction,
     // Section2UVAB,
@@ -58,18 +76,16 @@ export default {
     // Section3Instruction,
     // Section3Chemicals,
     // Section3Formative,
-    // Section3Discussion,
     // Section4Instruction,
     // Section4PASPF,
     // Section4Formative,
-    // Section4Discussion,
     // SectionFinalAssessment
   },
   data: function() {
     return {
       socket: io("localhost:3000"),
       // socket: io("wss://mighty-dawn-11508.herokuapp.com"),
-      currentSection: "Section3Cover",
+      currentSection: "Section3Discussion",
       sections: [
         "Section1Context",
         "Section1Video",
@@ -84,7 +100,17 @@ export default {
         "Section3Video",
         "Section3Q1",
         "Section3Q2",
-        "Section3Q3"
+        "Section3Q3",
+        "Section3Prepare",
+        "Section3Discussion",
+        "Section4Cover",
+        "Section4Video"
+        // "Section4Q1",
+        // "Section4Q2",
+        // "Section4Q3",
+        // "Section4Prepare",
+        // "Section4Discussion"
+
         // "Section1Spectrum",
         // "Section2Instruction",
         // "Section2UVAB",
@@ -92,11 +118,9 @@ export default {
         // "Section3Instruction",
         // "Section3Chemicals",
         // "Section3Formative",
-        // "Section3Discussion",
         // "Section4Instruction",
         // "Section4PASPF",
         // "Section4Formative",
-        // "Section4Discussion",
         // "SectionFinalAssessment"
       ],
       customData: null
