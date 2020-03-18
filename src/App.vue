@@ -57,8 +57,8 @@ export default {
   },
   data: function() {
     return {
-      socket: io("localhost:3000"),
-      // socket: io("wss://mighty-dawn-11508.herokuapp.com"),
+      // socket: io("localhost:3000"),
+      socket: io("wss://mighty-dawn-11508.herokuapp.com"),
       currentSection: "Section2Q1",
       sections: [
         "Section1Context",
