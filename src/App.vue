@@ -60,9 +60,10 @@ export default {
     SectionFinalAssessment
   },
   data: function() {
+    const socket = io("localhost:3000");
+    // const socket = io("wss://mighty-dawn-11508.herokuapp.com");
     return {
-      socket: io("localhost:3000"),
-      // socket: io("wss://mighty-dawn-11508.herokuapp.com"),
+      socket,
       currentSection: "Section1Context",
       sections: [
         "Section1Context",
@@ -90,7 +91,7 @@ export default {
         "Section4Discussion",
         "SectionFinalAssessment"
       ],
-      customData: null
+      customData: { socket }
     };
   },
   methods: {
@@ -110,6 +111,8 @@ export default {
       if (data.me && data.partner) {
         this.customData.assignment = data.me > data.partner ? "A" : "B";
       }
+      // Lazy implementation, throw the socket down for child to use also
+      this.customData.socket = this.socket;
     });
   }
 };

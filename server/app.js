@@ -57,6 +57,15 @@ io.on("connection", function(socket) {
     });
   }
 
+  socket.on("UPDATE_SCORE", function(data) {
+    // console.log(data);
+
+    const otherUser = pairedUsers[socket.id];
+    io.to(otherUser).emit("PARTNER_SCORE", {
+      score: data
+    });
+  });
+
   socket.on("disconnect", function(reason) {
     removeCuteName(thisUser);
     removeCuteName(pairedUsers[thisUser]);
