@@ -8,7 +8,7 @@
     />
     <MultipleSelectQuestion v-else v-on:feedback="onFeedback" v-bind:questionData="s2q1B" />
     <p v-if="submitted">{{feedback}}</p>
-    <button v-on:click="onSubmit">Submit</button>
+    <button v-if="!submitted" v-on:click="onSubmit">Submit</button>
     <button v-on:click="$emit('proceed')">Continue</button>
   </section>
 </template>
