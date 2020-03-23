@@ -3,14 +3,12 @@
     <h1>Question 1/2</h1>
     <MultipleSelectQuestion
       v-if="customData.assignment == 'A'"
-      v-on:completeQuestion="onCompleteQuestion"
+      v-on:feedback="onFeedback"
       v-bind:questionData="s2q1A"
     />
-    <MultipleSelectQuestion
-      v-else
-      v-on:completeQuestion="onCompleteQuestion"
-      v-bind:questionData="s2q1A"
-    />
+    <MultipleSelectQuestion v-else v-on:feedback="onFeedback" v-bind:questionData="s2q1B" />
+    <p v-if="submitted">{{feedback}}</p>
+    <button v-on:click="onSubmit">Submit</button>
     <button v-on:click="$emit('proceed')">Continue</button>
   </section>
 </template>
@@ -23,22 +21,44 @@ export default {
   props: ["customData"],
   data: function() {
     return {
+      feedback: "",
+      submitted: false,
       s2q1A: {
         qid: "s2q1-a",
+        questionText: "What effect would UVA bring to our skin?",
         choices: [
           { cid: "tanning", text: "Tanning" },
           { cid: "wrinkling", text: "Wrinkling" },
           { cid: "sunburn", text: "Sunburn" },
           { cid: "aging", text: "Aging" }
         ],
-        correctChoices: ["tanning", "wrinkling", "aging"]
+        correctChoices: ["tanning", "wrinkling", "aging"],
+        correctFeedback: "Answer: Correct!",
+        incorrectFeedback:
+          "Answer: Wrong. The correct answer is tanning, wrinkling and aging."
+      },
+      s2q1B: {
+        qid: "s2q1-b",
+        questionText: "What effect would UVB bring to our skin?",
+        choices: [
+          { cid: "tanning", text: "Tanning" },
+          { cid: "wrinkling", text: "Wrinkling" },
+          { cid: "sunburn", text: "Sunburn" },
+          { cid: "aging", text: "Aging" }
+        ],
+        correctChoices: ["sunburn"],
+        correctFeedback: "Answer: Correct!",
+        incorrectFeedback: "Answer: Wrong. The correct answer is sunburn."
       }
     };
   },
   methods: {
-    onCompleteQuestion: function() {
-      // this.$emit("proceed");
-      console.log(this.s2q1A);
+    onSubmit: function() {
+      this.submitted = true;
+    },
+    onFeedback: function(data) {
+      this.submitted = false;
+      this.feedback = data.feedback;
     }
   }
 };

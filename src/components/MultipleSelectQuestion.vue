@@ -1,6 +1,6 @@
 <template>
   <div v-bind:id="questionData.qid">
-    <p>What effect would UVB bring to our skin?</p>
+    <p>{{questionData.questionText}}</p>
     <div v-for="choice in questionData.choices" v-bind:key="questionData.qid + choice.cid">
       <input
         type="checkbox"
@@ -11,7 +11,6 @@
       />
       <label :for="questionData.qid + choice.text">{{choice.text}}</label>
     </div>
-    <button v-on:click="onSubmitAnswer">Submit</button>
   </div>
 </template>
 
@@ -24,9 +23,24 @@ export default {
       selectedChoices: []
     };
   },
-  methods: {
-    onSubmitAnswer: function() {
-      //
+  watch: {
+    selectedChoices: function() {
+      let feedback = "";
+      if (
+        this.questionData.correctChoices.sort().join(",") ==
+        this.selectedChoices
+          .concat()
+          .sort()
+          .join(",")
+      ) {
+        feedback = this.questionData.correctFeedback;
+      } else {
+        feedback = this.questionData.incorrectFeedback;
+      }
+      this.$emit("feedback", {
+        qid: this.questionData.qid,
+        feedback
+      });
     }
   }
 };
