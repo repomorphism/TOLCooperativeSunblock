@@ -1,10 +1,6 @@
 <template>
   <div id="app">
-    <component
-      v-bind:is="currentSection"
-      v-on:proceed="onProceed"
-      v-bind:customData="customData"
-    />
+    <component v-bind:is="currentSection" v-on:proceed="onProceed" v-bind:customData="customData" />
   </div>
 </template>
 
@@ -64,8 +60,8 @@ export default {
     SectionFinalAssessment
   },
   data: function() {
-    const socket = io("localhost:3000");
-    // const socket = io("wss://mighty-dawn-11508.herokuapp.com");
+    // const socket = io("localhost:3000");
+    const socket = io("wss://mighty-dawn-11508.herokuapp.com");
     return {
       socket,
       currentSection: "Section1Context",

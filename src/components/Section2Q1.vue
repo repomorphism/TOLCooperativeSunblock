@@ -1,36 +1,46 @@
 <template>
   <section id="section2q1">
     <h1>Question 1/2</h1>
-    <div v-if="customData.assignment == 'A'">
-      <p>What effect would UVA bring to our skin?</p>
-      <input type="checkbox" name="tanning" id="uva-checkbox" />
-      <label for="tanning">Tanning</label>
-      <input type="checkbox" name="wrinkling" id="uva-checkbox" />
-      <label for="wrinkling">Wrinkling</label>
-      <input type="checkbox" name="sunburn" id="uva-checkbox" />
-      <label for="sunburn">Sunburn</label>
-      <input type="checkbox" name="aging" id="uva-checkbox" />
-      <label for="aging">Aging</label>
-    </div>
-    <div v-else>
-      <p>What effect would UVB bring to our skin?</p>
-      <input type="checkbox" name="tanning" id="uva-checkbox" />
-      <label for="tanning">Tanning</label>
-      <input type="checkbox" name="wrinkling" id="uva-checkbox" />
-      <label for="wrinkling">Wrinkling</label>
-      <input type="checkbox" name="sunburn" id="uva-checkbox" />
-      <label for="sunburn">Sunburn</label>
-      <input type="checkbox" name="aging" id="uva-checkbox" />
-      <label for="aging">Aging</label>
-    </div>
-    <button v-on:click="$emit('proceed')">Submit</button>
+    <MultipleSelectQuestion
+      v-if="customData.assignment == 'A'"
+      v-on:completeQuestion="onCompleteQuestion"
+      v-bind:questionData="s2q1A"
+    />
+    <MultipleSelectQuestion
+      v-else
+      v-on:completeQuestion="onCompleteQuestion"
+      v-bind:questionData="s2q1A"
+    />
+    <button v-on:click="$emit('proceed')">Continue</button>
   </section>
 </template>
 
 <script>
+import MultipleSelectQuestion from "./MultipleSelectQuestion.vue";
 export default {
   name: "Section2Q1",
-  props: ["customData"]
+  components: { MultipleSelectQuestion },
+  props: ["customData"],
+  data: function() {
+    return {
+      s2q1A: {
+        qid: "s2q1-a",
+        choices: [
+          { cid: "tanning", text: "Tanning" },
+          { cid: "wrinkling", text: "Wrinkling" },
+          { cid: "sunburn", text: "Sunburn" },
+          { cid: "aging", text: "Aging" }
+        ],
+        correctChoices: ["tanning", "wrinkling", "aging"]
+      }
+    };
+  },
+  methods: {
+    onCompleteQuestion: function() {
+      // this.$emit("proceed");
+      console.log(this.s2q1A);
+    }
+  }
 };
 </script>
 
