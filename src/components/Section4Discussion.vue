@@ -1,8 +1,8 @@
 <template>
-  <div id="section4discussion">
+  <section id="section4discussion">
     <h1>Free discussion</h1>
     <button v-on:click="$emit('proceed')">Finish</button>
-  </div>
+  </section>
 </template>
 
 <script>

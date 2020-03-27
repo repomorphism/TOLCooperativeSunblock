@@ -1,10 +1,10 @@
 <template>
-  <div id="sectionfinalassessment">
+  <section id="sectionfinalassessment">
     <h1>Final Assessment</h1>
     <h1 v-if="customData.me">Your score: {{this.score}}</h1>
     <h1 v-if="customData.partner">{{customData.partner}}'s score: {{this.partnerScore}}</h1>
     <button v-on:click="onScoreSubmit">End</button>
-  </div>
+  </section>
 </template>
 
 <script>
