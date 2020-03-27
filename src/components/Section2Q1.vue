@@ -35,7 +35,7 @@ export default {
         correctChoices: ["tanning", "wrinkling", "aging"],
         correctFeedback: "Answer: Correct!",
         incorrectFeedback:
-          "Answer: Wrong. The correct answer is tanning, wrinkling and aging."
+          "Answer: Wrong. The correct answers are tanning, wrinkling and aging."
       },
       s2q1B: {
         qid: "s2q1-b",

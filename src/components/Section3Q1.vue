@@ -35,7 +35,7 @@ export default {
         correctChoices: ["light-texture", "refreshing"],
         correctFeedback: "Answer: Correct!",
         incorrectFeedback:
-          "Answer: Wrong. The correct answer are light texture and refresh user experience."
+          "Answer: Wrong. The correct answers are light texture and refresh user experience."
       },
       s3q1B: {
         qid: "s3q1-b",
@@ -49,7 +49,7 @@ export default {
         correctChoices: ["safe-skin", "sensitive-skin"],
         correctFeedback: "Answer: Correct!",
         incorrectFeedback:
-          "Answer: Wrong. The correct answer are safe to the skin and suitable for sensitive skin."
+          "Answer: Wrong. The correct answers are safe to the skin and suitable for sensitive skin."
       }
     };
   },
