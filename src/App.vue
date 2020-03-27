@@ -1,6 +1,10 @@
 <template>
   <div id="app">
-    <component v-bind:is="currentSection" v-on:proceed="onProceed" v-bind:customData="customData" />
+    <component
+      v-bind:is="currentSection"
+      v-on:proceed="onProceed"
+      v-bind:customData="customData"
+    />
   </div>
 </template>
 
@@ -173,8 +177,11 @@ button {
   color: #ffffff;
   letter-spacing: 0;
   margin: 16px 16px 16px 16px;
-
   background-color: #89a6ff;
   border: none;
+}
+
+button:disabled {
+  background-color: #989898;
 }
 </style>
