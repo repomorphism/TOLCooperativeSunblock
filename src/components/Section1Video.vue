@@ -8,7 +8,6 @@
       @ended="onStopped"
       ref="youtube"
     ></Youtube>
-
     <button :disabled="!watched" v-on:click="$emit('proceed')">Continue</button>
   </section>
 </template>

@@ -1,27 +1,45 @@
 <template>
   <section id="section2video">
-    <iframe
+    <Youtube
       width="720"
       height="405"
-      v-bind:src="videoUrl"
-      frameborder="0"
-      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen
-    ></iframe>
-    <button v-on:click="$emit('proceed')">Continue</button>
+      :video-id="videoID"
+      @paused="onStopped"
+      @ended="onStopped"
+      ref="youtube"
+    ></Youtube>
+    <button :disabled="!watched" v-on:click="$emit('proceed')">Continue</button>
   </section>
 </template>
 
 <script>
+import { Youtube } from "vue-youtube";
+
 export default {
   name: "Section2Video",
+  components: { Youtube },
   props: ["customData"],
+  data: function() {
+    return {
+      watched: false
+    };
+  },
+  methods: {
+    onStopped: async function() {
+      const player = this.$refs.youtube.player;
+      const duration = await player.getDuration();
+      const currentTime = await player.getCurrentTime();
+      if (currentTime > duration * 0.9) {
+        this.watched = true;
+      }
+    }
+  },
   computed: {
-    videoUrl: function() {
+    videoID: function() {
       if (this.customData.assignment == "A") {
-        return "https://www.youtube.com/embed/J4b7MgMvsnU";
+        return "J4b7MgMvsnU";
       } else {
-        return "https://www.youtube.com/embed/DHN_JxiXx0Q";
+        return "DHN_JxiXx0Q";
       }
     }
   }
