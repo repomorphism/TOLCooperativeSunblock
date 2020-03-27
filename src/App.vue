@@ -149,6 +149,8 @@ h1 {
 
 h2 {
   font-size: 17px;
+  max-width: 600px;
+  text-align: start;
 }
 
 p {
