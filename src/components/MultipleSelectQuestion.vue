@@ -3,7 +3,7 @@
     <h2>{{questionData.questionText}}</h2>
     <div class="multi-select-choices">
       <div
-        v-for="choice in questionData.choices"
+        v-for="choice in choices"
         v-bind:key="questionData.qid + choice.cid"
         class="multi-select-choice"
       >
@@ -28,6 +28,21 @@ export default {
     return {
       selectedChoices: []
     };
+  },
+  computed: {
+    choices: function() {
+      // Hack: random order for questions with 4 or more choices (so true-false, UVA/UVB/UVC not shuffled)
+      if (this.questionData.choices.length < 4) {
+        return this.questionData.choices;
+      }
+      // shuffle https://stackoverflow.com/questions/6274339/how-can-i-shuffle-an-array
+      const choices = this.questionData.choices.slice();
+      for (let i = choices.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [choices[i], choices[j]] = [choices[j], choices[i]];
+      }
+      return choices;
+    }
   },
   watch: {
     selectedChoices: function() {

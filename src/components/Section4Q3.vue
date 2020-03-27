@@ -35,7 +35,7 @@ export default {
           { cid: "10h", text: "10 hours" }
         ],
         correctChoice: "10h",
-        correctFeedback: "Answer: Correct!",
+        correctFeedback: "Answer: Correct! 20*30 = 600 min = 10 hours",
         incorrectFeedback:
           "Answer: Wrong. The correct answer is 10 hours. 20*30 = 600 min = 10 hours"
       }
