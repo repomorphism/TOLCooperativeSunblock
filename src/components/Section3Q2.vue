@@ -16,7 +16,7 @@
 <script>
 import MultipleSelectQuestion from "./MultipleSelectQuestion.vue";
 export default {
-  name: "Section3Q1",
+  name: "Section3Q2",
   components: { MultipleSelectQuestion },
   props: ["customData"],
   data: function() {
