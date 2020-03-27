@@ -119,12 +119,17 @@ export default {
 </script>
 
 <style>
+body {
+  background-image: url("assets/background.png");
+}
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: HelveticaNeue-Medium;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   /* color: #2c3e50; */
+  color: #ffffff;
   margin-top: 60px;
 }
 
@@ -133,5 +138,41 @@ section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+h1 {
+  font-size: 30px;
+  letter-spacing: 0;
+  line-height: 45px;
+  max-width: 500px;
+}
+
+h2 {
+  font-size: 17px;
+}
+
+p {
+  letter-spacing: 0;
+  line-height: 45px;
+  max-width: 530px;
+  font-size: 15px;
+  color: #ffffff;
+  letter-spacing: 0;
+  line-height: 30px;
+  text-align: start;
+}
+
+button {
+  width: 232px;
+  height: 50px;
+  border-radius: 10px;
+  font-family: Helvetica;
+  font-size: 20px;
+  color: #ffffff;
+  letter-spacing: 0;
+  margin: 16px 16px 16px 16px;
+
+  background-color: #89a6ff;
+  border: none;
 }
 </style>

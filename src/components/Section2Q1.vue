@@ -9,7 +9,7 @@
     <MultipleSelectQuestion v-else v-on:feedback="onFeedback" v-bind:questionData="s2q1B" />
     <p v-if="submitted">{{feedback}}</p>
     <button v-if="!submitted" v-on:click="onSubmit">Submit</button>
-    <button v-on:click="$emit('proceed')">Continue</button>
+    <button v-if="submitted" v-on:click="$emit('proceed')">Continue</button>
   </section>
 </template>
 
@@ -21,7 +21,7 @@ export default {
   props: ["customData"],
   data: function() {
     return {
-      feedback: "",
+      feedback: "Please select.",
       submitted: false,
       s2q1A: {
         qid: "s2q1-a",
@@ -64,4 +64,11 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+h1 {
+  font-size: 20px;
+  max-width: 640px;
+  width: 640px;
+  text-align: start;
+}
+</style>

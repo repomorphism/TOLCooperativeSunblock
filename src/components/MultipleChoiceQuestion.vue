@@ -1,18 +1,18 @@
 <template>
-  <div v-bind:id="questionData.qid" class="multi-select-question">
+  <div v-bind:id="questionData.qid" class="multiple-choice-question">
     <h2>{{questionData.questionText}}</h2>
-    <div class="multi-select-choices">
+    <div class="multiple-choice-choices">
       <div
         v-for="choice in questionData.choices"
         v-bind:key="questionData.qid + choice.cid"
-        class="multi-select-choice"
+        class="multiple-choice-choice"
       >
         <input
-          type="checkbox"
+          type="radio"
           v-bind:id="questionData.qid + choice.text"
           v-bind:name="questionData.qid + 'input'"
           :value="choice.cid"
-          v-model="selectedChoices"
+          v-model="selectedChoice"
         />
         <label :for="questionData.qid + choice.text">{{choice.text}}</label>
       </div>
@@ -26,19 +26,13 @@ export default {
   props: ["questionData"],
   data: function() {
     return {
-      selectedChoices: []
+      selectedChoice: ""
     };
   },
   watch: {
-    selectedChoices: function() {
+    selectedChoice: function() {
       let feedback = "";
-      if (
-        this.questionData.correctChoices.sort().join(",") ==
-        this.selectedChoices
-          .concat()
-          .sort()
-          .join(",")
-      ) {
+      if (this.questionData.correctChoice == this.selectedChoice) {
         feedback = this.questionData.correctFeedback;
       } else {
         feedback = this.questionData.incorrectFeedback;
@@ -53,26 +47,26 @@ export default {
 </script>
 
 <style>
-.multi-select-question {
+.multiple-choice-question {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.multi-select-choices {
+.multiple-choice-choices {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
 
-.multi-select-choice {
+.multiple-choice-choice {
   display: flex;
   margin: 8px 0px 8px 0px;
   align-items: center;
 }
 
-/* checkbox */
-.multi-select-choice > input {
+/* radio button */
+.multiple-choice-choice > input {
   margin: 0px 8px 0px 8px;
 }
 </style>
