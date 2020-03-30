@@ -11,22 +11,28 @@ const server = app.listen(PORT, function() {
 const io = require("socket.io")(server);
 
 const nameList = [
-  "Kitten",
-  "Hedgehog",
-  "Sloth",
-  "Red Panda",
-  "Sea Otter",
-  "Anteater",
-  "Fennec Fox",
-  "Chinchilla",
-  "Slow Loris",
-  "Pufferfish",
-  "Sugar Glider",
-  "Prairie Dog",
-  "Arctic Fox",
-  "Baby Turtle",
-  "Baby Crocodile",
-  "Dolphin"
+  "Tom Nook",
+  "Timmy",
+  "Tommy",
+  "Isabelle",
+  "K.K. Slider",
+  "Wisp",
+  "Blathers",
+  "Celeste",
+  "Kicks",
+  "Harvey",
+  "Sable",
+  "Mabel",
+  "Labelle",
+  "Leif",
+  "Saharah",
+  "Gulliver",
+  "Flick",
+  "Daisy Mae",
+  "Orville",
+  "Wilbur",
+  "Lloid",
+  "Zipper T. Bunny"
 ];
 const nameAssignment = {};
 
