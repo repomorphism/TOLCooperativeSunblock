@@ -33,9 +33,10 @@ export default {
           { cid: "refreshing", text: "refreshing user experience" }
         ],
         correctChoices: ["light-texture", "refreshing"],
-        correctFeedback: "Answer: Correct!",
+        correctFeedback:
+          "Answer: Correct! Chemical sunblocks have light texture and people feel refreshing when using them.",
         incorrectFeedback:
-          "Answer: Wrong. The correct answers are light texture and refresh user experience."
+          "Answer: Wrong.  Chemical sunblocks have light texture and people feel refreshing when using them."
       },
       s3q1B: {
         qid: "s3q1-b",
@@ -47,9 +48,10 @@ export default {
           { cid: "refreshing", text: "refreshing user experience" }
         ],
         correctChoices: ["safe-skin", "sensitive-skin"],
-        correctFeedback: "Answer: Correct!",
+        correctFeedback:
+          "Answer: Correct! Physical sunblocks only reflect sunlight, so they are safe to the skin and suitable for sensitive skin but they are heavy in texture and are not refreshing.",
         incorrectFeedback:
-          "Answer: Wrong. The correct answers are safe to the skin and suitable for sensitive skin."
+          "Answer: Wrong.  Physical sunblocks only reflect sunlight, so they are safe to the skin and suitable for sensitive skin but they are heavy in texture and are not refreshing."
       }
     };
   },

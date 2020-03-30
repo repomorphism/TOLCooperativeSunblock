@@ -1,15 +1,25 @@
 <template>
   <section id="section3prepare">
     <h1>Prepare for discussion</h1>
-    <p>
-      Now, you will have 10-minutes to prepare the 20 minutes discussion. How
-      would you organize the next 10-min discussion to make the most of it? You
-      can brainstorm some questions for the discussion such as:
-    </p>
-    <div class="guiding-questions">
-      <p>What you have learned in the previous clip?</p>
-      <p>How is your method of protection the same & different from your partner's method?</p>
-      <p>What’s the relative strength & weakness of each?</p>
+    <div v-if="customData.assignment == 'A'">
+      <p>
+        Now, you will have 1 minute to prepare for a 5-minute discussion. How
+        would you organize the discussion to make the most of it? You can
+        brainstorm some questions for the discussion such as:
+      </p>
+      <p>1. How do chemical blocks work to protect skins?</p>
+      <p>2. What is the main ingredients in chemical sunblocks?</p>
+      <p>3. What are traits of chemical sunblocks?</p>
+    </div>
+    <div v-else>
+      <p>
+        Now, you will have 1 minute to prepare for a 5-minute discussion. How
+        would you organize the discussion to make the most of it? You can
+        brainstorm some questions for the discussion such as:
+      </p>
+      <p>1. How do physical blocks work to protect skins?</p>
+      <p>2. What is the main ingredients in physical sunblocks?</p>
+      <p>3. What are traits of physical sunblocks?</p>
     </div>
 
     <button v-on:click="$emit('proceed')">{{timerText}}</button>
@@ -20,6 +30,7 @@
 <script>
 export default {
   name: "Section3Prepare",
+  props: ["customData"],
   data: function() {
     return {
       remainingTime: 60,

@@ -26,7 +26,7 @@ export default {
       s3q2A: {
         qid: "s3q2-a",
         questionText:
-          "What might be the potential drawback of chemical blockers?",
+          "What might be the potential drawbacks of chemical blocks?",
         choices: [
           { cid: "pale-skin", text: "pale skin" },
           { cid: "oily-skin", text: "oily skin" },
@@ -34,14 +34,15 @@ export default {
           { cid: "allergic", text: "may cause allergic reactions" }
         ],
         correctChoices: ["unstable", "allergic"],
-        correctFeedback: "Answer: Correct!",
+        correctFeedback:
+          "Answer: Correct! Chemical blocks aborb sunlight. They are unstable in chemical structure and are sensitive to some skins.",
         incorrectFeedback:
-          "Answer: Wrong. The correct answers are unstable and may cause allergic reactions."
+          "Answer: Wrong. Chemical blocks aborb sunlight. They are unstable in chemical structure and are sensitive to some skins."
       },
       s3q2B: {
         qid: "s3q2-b",
         questionText:
-          "What might be the potential drawback of physical blockers?",
+          "What might be the potential drawbacks of physical blocks?",
         choices: [
           { cid: "pale-skin", text: "pale skin" },
           { cid: "oily-skin", text: "oily skin" },
@@ -49,9 +50,10 @@ export default {
           { cid: "allergic", text: "may cause allergic reactions" }
         ],
         correctChoices: ["pale-skin", "oily-skin"],
-        correctFeedback: "Answer: Correct!",
+        correctFeedback:
+          "Answer: Correct!  Physical blockers will cause oily and pale skin because they are heavy in texture and are not refreshing. However, they are stable and suitble for sensitive skins.",
         incorrectFeedback:
-          "Answer: Wrong. The correct answers are pale skin and oily skin."
+          "Answer: Wrong. Physical blockers will cause oily and pale skin because they are heavy in texture and are not refreshing. However, they are stable and suitble for sensitive skins."
       }
     };
   },

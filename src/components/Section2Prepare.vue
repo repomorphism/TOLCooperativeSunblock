@@ -3,21 +3,21 @@
     <h1>Prepare for discussion</h1>
     <div v-if="customData.assignment == 'A'">
       <p>
-        Now, you will have 10-minutes to prepare the 20 minutes discussion.
-        Howwould you organize the next 10-min discussion to make the most of
-        it? Here are some questions you can think about:
+        Now, you will have 1 minute to prepare for a 5-minute discussion. How
+        would you organize the discussion to make the most of it? You can
+        brainstorm some questions for the discussion such as:
       </p>
       <p>1. What is the harm of UVA on skins?</p>
-      <p>2. Why does UVA have different harm from UVB on skins?</p>
+      <p>2. Why does UVA have different effect on skins compared to UVB?</p>
     </div>
     <div v-else>
       <p>
-        Now, you will have 10-minutes to prepare the 20 minutes discussion.
-        Howwould you organize the next 10-min discussion to make the most of
-        it? Here are some questions you can think about:
+        Now, you will have 1 minute to prepare for a 5-minute discussion. How
+        would you organize the discussion to make the most of it? You can
+        brainstorm some questions for the discussion such as:
       </p>
       <p>1. What is the harm of UVB on skins?</p>
-      <p>2. Why does UVB have different harm from UVA on skins?</p>
+      <p>2. Why does UVB have different effect on skins compared to UVA?</p>
     </div>
 
     <button v-on:click="$emit('proceed')">{{timerText}}</button>

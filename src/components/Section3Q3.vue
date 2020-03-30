@@ -26,7 +26,7 @@ export default {
       s3q3A: {
         qid: "s3q3-a",
         questionText:
-          "What are the active ingredients of chemical sunblock for absorption?",
+          "What are the active ingredients of chemical sunblocks for absorption?",
         choices: [
           { cid: "zinc-oxide", text: "zinc oxide" },
           { cid: "titanium-oxide", text: "titanium oxide" },
@@ -41,7 +41,7 @@ export default {
       s3q3B: {
         qid: "s3q3-b",
         questionText:
-          "What are the active ingredients of physical sunblock for reflection?",
+          "What are the active ingredients of physical sunblocks for reflection?",
         choices: [
           { cid: "zinc-oxide", text: "zinc oxide" },
           { cid: "titanium-oxide", text: "titanium oxide" },
