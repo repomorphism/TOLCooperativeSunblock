@@ -1,15 +1,23 @@
 <template>
   <section id="section4prepare">
     <h1>Prepare for discussion</h1>
-    <p>
-      Now, you will have 10-minutes to prepare the 20 minutes discussion. How
-      would you organize the next 10-min discussion to make the most of it? You
-      can brainstorm some questions for the discussion such as:
-    </p>
-    <div class="guiding-questions">
-      <p>What you have learned in the previous clip?</p>
-      <p>How is your method of protection the same & different from your partner's method?</p>
-      <p>What’s the relative strength & weakness of each?</p>
+    <div v-if="customData.assignment == 'A'">
+      <p>
+        Now, you will have 1 minute to prepare for a 5-minute discussion. How
+        would you organize the discussion to make the most of it? You can
+        brainstorm some questions for the discussion such as:
+      </p>
+      <p>1. What is SPF? What UV does SPF work on?</p>
+      <p>2. How does SPF work on the skin?</p>
+    </div>
+    <div v-else>
+      <p>
+        Now, you will have 1 minute to prepare for a 5-minute discussion. How
+        would you organize the discussion to make the most of it? You can
+        brainstorm some questions for the discussion such as:
+      </p>
+      <p>1. What is PA? What UV does PA work on?</p>
+      <p>2. How does PA work on the skin?</p>
     </div>
 
     <button v-on:click="$emit('proceed')">{{timerText}}</button>
@@ -20,6 +28,7 @@
 <script>
 export default {
   name: "Section4Prepare",
+  props: ["customData"],
   data: function() {
     return {
       remainingTime: 60,
@@ -55,13 +64,5 @@ export default {
 <style scoped>
 p {
   width: 530px;
-}
-.guiding-questions p {
-  color: blueviolet;
-  font-family: Helvetica;
-  font-size: 15px;
-  color: #f0f0f0;
-  letter-spacing: 0;
-  line-height: 25px;
 }
 </style>

@@ -67,12 +67,4 @@ export default {
 p {
   width: 530px;
 }
-.guiding-questions p {
-  color: blueviolet;
-  font-family: Helvetica;
-  font-size: 15px;
-  color: #f0f0f0;
-  letter-spacing: 0;
-  line-height: 25px;
-}
 </style>

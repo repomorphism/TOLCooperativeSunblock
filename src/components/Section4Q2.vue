@@ -33,8 +33,10 @@ export default {
           { cid: "false", text: "False" }
         ],
         correctChoice: "true",
-        correctFeedback: "Answer: Correct!",
-        incorrectFeedback: "Answer: Wrong. It is true."
+        correctFeedback:
+          "Answer: Correct.  The higher the number behind SPF, the higher its ability of blocking the sunlight.",
+        incorrectFeedback:
+          "Answer: Wrong.  The higher the number behind SPF, the higher its ability of blocking the sunlight."
       },
       s4q2B: {
         qid: "s4q2-b",
@@ -45,8 +47,10 @@ export default {
           { cid: "false", text: "False" }
         ],
         correctChoice: "false",
-        correctFeedback: "Answer: Correct!",
-        incorrectFeedback: "Answer: Wrong. The sentence is incorrect."
+        correctFeedback:
+          "Answer: Correct. PA can block UVA and its ability will be stronger witn more plus signed.",
+        incorrectFeedback:
+          "Answer: Wrong. PA can block UVA and its ability will be stronger witn more plus signed."
       }
     };
   },
