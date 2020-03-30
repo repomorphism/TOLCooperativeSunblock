@@ -33,9 +33,10 @@ export default {
           { cid: "aging", text: "Aging" }
         ],
         correctChoices: ["tanning", "wrinkling", "aging"],
-        correctFeedback: "Answer: Correct!",
+        correctFeedback:
+          "Answer: Correct! UVA will cause tanning, wrinkling and aging because it has higher wavelength and can reach the deeper layer of the skin.",
         incorrectFeedback:
-          "Answer: Wrong. The correct answers are tanning, wrinkling and aging."
+          "Answer: Wrong. UVA will cause tanning, wrinkling and aging because it has higher wavelength and can reach the deeper layer of the skin."
       },
       s2q1B: {
         qid: "s2q1-b",
@@ -47,8 +48,10 @@ export default {
           { cid: "aging", text: "Aging" }
         ],
         correctChoices: ["sunburn"],
-        correctFeedback: "Answer: Correct!",
-        incorrectFeedback: "Answer: Wrong. The correct answer is sunburn."
+        correctFeedback:
+          "Answer: Correct! UVB can only reach the top layer of the skin and cause sunburn.",
+        incorrectFeedback:
+          "Answer: Wrong. UVB can only reach the top layer of the skin and cause sunburn."
       }
     };
   },
