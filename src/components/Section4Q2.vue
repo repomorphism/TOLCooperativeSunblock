@@ -48,9 +48,9 @@ export default {
         ],
         correctChoice: "false",
         correctFeedback:
-          "Answer: Correct. PA can block UVA and its ability will be stronger witn more plus signed.",
+          "Answer: Correct. PA can block UVA and its ability will be stronger with more plus signs.",
         incorrectFeedback:
-          "Answer: Wrong. PA can block UVA and its ability will be stronger witn more plus signed."
+          "Answer: Wrong. PA can block UVA and its ability will be stronger with more plus signs."
       }
     };
   },
