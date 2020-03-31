@@ -1,6 +1,18 @@
 <template>
   <div id="app">
     <component v-bind:is="currentSection" v-on:proceed="onProceed" v-bind:customData="customData" />
+    <div v-if="!customData.partner" id="tester-message">
+      <p>
+        (If you're testing, you can open this page in two browser windows, or
+        bypass the automatic matching and proceed as learner
+        <button
+          @click="setLearnerA"
+          class="learner-button"
+        >A</button>
+        or learner
+        <button @click="setLearnerB" class="learner-button">B</button>)
+      </p>
+    </div>
   </div>
 </template>
 
@@ -101,6 +113,20 @@ export default {
       if (index < count - 1) {
         this.currentSection = this.sections[(index + 1) % count];
       }
+    },
+    setLearnerA: function() {
+      this.customData = {
+        me: "Learner A",
+        partner: "Learner B",
+        assignment: "A"
+      };
+    },
+    setLearnerB: function() {
+      this.customData = {
+        me: "Learner B",
+        partner: "Learner A",
+        assignment: "B"
+      };
     }
   },
   mounted() {
@@ -112,7 +138,7 @@ export default {
         this.customData.assignment = data.me > data.partner ? "A" : "B";
       }
       // Lazy implementation, throw the socket down for child to use also
-      this.customData.socket = this.socket;
+      // this.customData.socket = this.socket;
     });
   }
 };
@@ -138,6 +164,15 @@ section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+#tester-message {
+  display: flex;
+  justify-content: center;
+}
+
+#tester-message > p {
+  text-align: center;
 }
 
 h1 {
@@ -179,5 +214,13 @@ button {
 
 button:disabled {
   background-color: #989898;
+}
+
+.learner-button {
+  width: auto;
+  height: auto;
+  border-radius: 2px;
+  font-size: 15px;
+  margin: 0;
 }
 </style>

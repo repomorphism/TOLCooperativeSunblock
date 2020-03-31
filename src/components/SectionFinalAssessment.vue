@@ -33,14 +33,14 @@ export default {
   methods: {
     onScoreSubmit: function() {
       this.score += 1;
-      this.customData.socket.emit("UPDATE_SCORE", this.score);
+      // this.customData.socket.emit("UPDATE_SCORE", this.score);
     }
-  },
-  mounted() {
-    this.customData.socket.on("PARTNER_SCORE", data => {
-      this.partnerScore = data.score;
-    });
   }
+  // mounted() {
+  //   this.customData.socket.on("PARTNER_SCORE", data => {
+  //     this.partnerScore = data.score;
+  //   });
+  // }
 };
 </script>
 
